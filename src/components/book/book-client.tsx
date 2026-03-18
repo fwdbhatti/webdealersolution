@@ -5,9 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 
 const CREDENTIALS = [
-  { label: "100,000+ Interactions", sublabel: "handled for clients" },
-  { label: "60% Lead Recovery", sublabel: "average improvement" },
-  { label: "< 30s Response Time", sublabel: "24/7, every day" },
+  { label: "286,000+ Qualified Leads", sublabel: "generated since 2015" },
+  { label: "48 Certified Agents", sublabel: "trained on your specific business" },
+  { label: "< 30s Response Time", sublabel: "24/7, every single day" },
 ];
 
 const CALL_AGENDA = [
@@ -21,7 +21,7 @@ const CALL_AGENDA = [
   },
   {
     icon: Clock,
-    text: "Outline a rollout plan with projected ROI timeline",
+    text: "Outline a custom rollout plan with projected ROI timeline",
   },
 ];
 
@@ -35,16 +35,10 @@ export function BookClient() {
       {/* Hero */}
       <SectionWrapper className="border-b border-border">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-live opacity-75 animate-live-ping" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-live" />
-            </span>
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Free Conversion Audit
-            </span>
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            Free Conversion Audit
+          </p>
+          <h1 className="text-3xl md:text-5xl font-bold font-heading">
             Discover Exactly How Much Revenue Your Website Is Leaking
           </h1>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
@@ -57,9 +51,8 @@ export function BookClient() {
       {/* Two-column layout */}
       <SectionWrapper>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Left: Profile & Credentials */}
+          {/* Left: Credentials */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Track Record */}
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 Track Record
@@ -79,7 +72,6 @@ export function BookClient() {
               </div>
             </div>
 
-            {/* What We'll Cover */}
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 What We&apos;ll Cover
@@ -102,7 +94,7 @@ export function BookClient() {
 
           {/* Right: Calendar Embed */}
           <div className="lg:col-span-3">
-            <Card className="bg-card border-border overflow-hidden">
+            <Card className="bg-card border-border overflow-hidden rounded-xl">
               <CardContent className="p-0">
                 <div className="p-4 border-b border-border">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">

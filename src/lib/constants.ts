@@ -1,218 +1,108 @@
-import type {
-  TrustGapCard,
-  ComparisonRow,
-  ProcessStep,
-  IndustryTab,
-  Testimonial,
-} from "./types";
+import type { Testimonial } from "./types";
 
 export const SITE = {
-  name: "WebDealer",
-  tagline: "The 24/7 human-powered sales floor for high-ticket brands.",
+  name: "WebDealer Solutions",
+  tagline:
+    "The empathy, care, and 24/7 human connection that AI bots can't deliver.",
   bookingUrl: "/book",
-  heroHeadline: "Stop Losing 60% of Your Leads to an 'Away' Message.",
-  heroSubheadline:
-    "The 24/7 human-powered sales floor for high-ticket brands.",
 } as const;
 
-export const TRUST_GAP_CARDS: TrustGapCard[] = [
+export const HERO = {
+  headline: "High-Ticket Leads Require a Human Handshake.",
+  subheadline:
+    "We don't sell software. We provide the empathy, care, and 24/7 human connection that generic AI bots simply can't deliver. Protect your brand's trust and convert more showroom visits with real professionals.",
+  cta: "Talk to a Lead Expert",
+} as const;
+
+export const IMPACT_STATS = [
+  { value: 26, label: "Elite Enterprise Clients" },
+  { value: 48, label: "Trained Human Professionals" },
+  { value: 286773, label: "Qualified Leads Generated Since 2015" },
+] as const;
+
+export const TRUST_TAX = {
+  headline: 'The "Trust Tax" of AI Chatbots.',
+  body: "In a rush to automate, businesses are handing their most valuable leads to guessing machines. When a customer is spending $50,000, they want to know a real person is holding their data. We upgrade your technology to capture the lead, but we keep the empathy intact to close the deal.",
+} as const;
+
+export const PILLARS = [
   {
-    icon: "BotOff",
-    title: "The Bot Bounce",
-    stat: "68%",
-    description:
-      "of consumers abandon a chat when they realise they're talking to a bot. Your first impression is costing you deals.",
-  },
-  {
-    icon: "Moon",
-    title: "The 11 PM Black Hole",
-    stat: "47%",
-    description:
-      "of high-intent enquiries arrive outside business hours. No human on the other end means no appointment booked.",
+    icon: "Shield",
+    title: "The High-Stakes Psychological Barrier",
+    body: "If someone is buying a $50 pair of shoes, a bot is fine. If they are giving away their phone number and credit score for a $50,000 vehicle, they need human reassurance. We provide that security.",
   },
   {
     icon: "AlertTriangle",
-    title: "Hallucination Liability",
-    stat: "$2.4M",
-    description:
-      "average settlement when an AI chatbot gives incorrect information on pricing or availability in a regulated industry.",
+    title: "Eliminating AI 'Hallucinations'",
+    body: "In lead gen, accuracy is everything. An AI agent might accidentally promise a 'guaranteed' trade-in price just to keep the conversation going, killing the deal. Our human agents know exactly where your legal and operational lines are drawn.",
   },
-];
+  {
+    icon: "Eye",
+    title: "Beating the 'Uncanny Valley'",
+    body: "Customers have bot-radar. The moment a user asks, 'Are you a real person?' and gets a canned response, your conversion rate tanks. AI creates high-volume, low-quality spam. We deliver 3x to 5x higher conversion to an actual showroom visit.",
+  },
+  {
+    icon: "Heart",
+    title: "Empathy is the Closing Tool",
+    body: "Lead generation isn't data entry; it's persuasion. A bot says, 'I recorded your interest.' Our human agents say, 'That F-150 is our most popular truck — let me grab your number and have my manager hold the keys so no one else buys it before you arrive.' Empathy closes.",
+  },
+] as const;
 
-export const COMPARISON_ROWS: ComparisonRow[] = [
-  {
-    feature: "Response Time",
-    humanAgent: "< 30 seconds, 24/7",
-    aiChatbot: "Instant but scripted",
-  },
-  {
-    feature: "After-Hours Booking",
-    humanAgent: true,
-    aiChatbot: false,
-  },
-  {
-    feature: "Data Accuracy",
-    humanAgent: "Verified by human",
-    aiChatbot: "Prone to hallucination",
-  },
-  {
-    feature: "Complex Enquiries",
-    humanAgent: "Handled with nuance",
-    aiChatbot: "Escalated or dropped",
-  },
-  {
-    feature: "Tone & Empathy",
-    humanAgent: "Brand-trained agents",
-    aiChatbot: "Robotic templating",
-  },
-  {
-    feature: "CRM Integration",
-    humanAgent: "Live push, clean data",
-    aiChatbot: "Often broken or partial",
-  },
-  {
-    feature: "Compliance & Liability",
-    humanAgent: "Human accountability",
-    aiChatbot: "Legal grey area",
-  },
-];
-
-export const ROI_DEFAULTS = {
-  visitors: 10000,
-  conversionRate: 2,
-  dealValue: 5000,
-} as const;
-
-export const ROI_MULTIPLIER = 2.5;
-
-export const PROCESS_STEPS: ProcessStep[] = [
+export const ONBOARDING_STEPS = [
   {
     number: "01",
-    title: "The 24/7 Safety Net",
-    subtitle: "Engagement",
+    title: "The Discovery Deep-Dive",
     description:
-      "A trained human agent greets every visitor within 30 seconds — day or night. No bots, no scripts, no 'we'll get back to you.'",
-    details: [
-      "Instant human response on your website chat",
-      "Brand-specific greeting and tone of voice",
-      "Seamless handoff feels native to your site",
-    ],
+      "We don't use generic scripts. We sit down with your sales managers to understand your specific inventory, your ideal buyer profile, and your exact brand voice.",
   },
   {
     number: "02",
-    title: "The Playbook Qualification",
-    subtitle: "Filtering",
+    title: "The Custom Playbook",
     description:
-      "Our agents follow your custom playbook to qualify leads, filter tyre-kickers, and capture the data that actually matters.",
-    details: [
-      "Custom qualification criteria per industry",
-      "Trade-in values, finance intent, timeline captured",
-      "Tire-kickers filtered before they waste your team's time",
-    ],
+      "We build a proprietary \"Engagement Playbook\" exclusively for your website. You review and approve every qualification question, trade-in prompt, and transition phrase.",
   },
   {
     number: "03",
-    title: "The Live Transfer & CRM Push",
-    subtitle: "Action",
+    title: "Certification & Launch",
     description:
-      "Qualified leads are either transferred live to your sales team or pushed directly into your CRM with all data attached.",
-    details: [
-      "Live warm transfer during business hours",
-      "After-hours: appointment booked + CRM push",
-      "Clean, verified data — no hallucinated fields",
-    ],
+      "Our agents aren't let loose on your site until they pass a certification on your specific playbook. From Day 1, they sound exactly like your best salesperson.",
   },
-];
-
-export const INDUSTRY_TABS: IndustryTab[] = [
-  {
-    id: "automotive",
-    label: "Automotive",
-    headline: "Turn 'Is This Still Available?' Into Booked Test Drives",
-    description:
-      "Dealerships lose thousands of leads to automated responses and after-hours silence. Our agents handle trade-in queries, finance questions, and test drive bookings — 24/7.",
-    painPoints: [
-      "60% of website leads go unresponded after hours",
-      "'Is this still available?' spam overwhelms your BDC",
-      "AI bots can't handle trade-in or finance complexity",
-    ],
-    solutions: [
-      "Human agents trained on your inventory and pricing",
-      "Trade-in value capture and finance pre-qualification",
-      "Direct test drive booking into your DMS/CRM",
-    ],
-    clientName: "Mercedes-Benz Toronto",
-  },
-  {
-    id: "b2b",
-    label: "B2B Services",
-    headline: "Convert Complex Specs Into Qualified Opportunities",
-    description:
-      "B2B leads need nuanced conversations about specs, turnaround times, and custom quotes. Bots can't handle the complexity — humans can.",
-    painPoints: [
-      "Complex quote requests abandoned on web forms",
-      "After-hours RFQs from different time zones go cold",
-      "AI chatbots give inaccurate specs or pricing",
-    ],
-    solutions: [
-      "Agents trained on your service catalogue and pricing tiers",
-      "Custom quote capture with all spec details",
-      "24/7 coverage for international time zones",
-    ],
-    clientName: "Big Blue Printing",
-  },
-  {
-    id: "professional",
-    label: "Professional Services",
-    headline: "Book High-Value Consultations Around the Clock",
-    description:
-      "Law firms, financial advisors, and consultancies need trust-first conversations. Our agents provide the white-glove intake your brand demands.",
-    painPoints: [
-      "High-value prospects expect immediate, professional response",
-      "Intake forms create friction and drop-off",
-      "Compliance requirements make AI responses risky",
-    ],
-    solutions: [
-      "Professional intake with empathy and discretion",
-      "Conflict check and qualification before booking",
-      "GDPR-compliant data handling and consent capture",
-    ],
-  },
-];
+] as const;
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "We went from missing 40% of our after-hours leads to booking appointments while we sleep. The ROI was obvious within the first month.",
+      "After switching to WebDealer, the complaints about our frustrating website bot vanished. For the first time, our sales team is waking up to calendar invites from people who are actually excited to talk to us.",
     author: "James Chen",
     role: "General Manager",
     company: "Mercedes-Benz Toronto",
   },
   {
     quote:
-      "Our old chatbot was losing us complex print jobs because it couldn't handle spec questions. WebDealer's human agents understand our products.",
+      "We tried three different AI chatbots before WebDealer. The difference is human empathy — our close rate on web leads tripled because people felt heard, not processed.",
     author: "Sarah Mitchell",
     role: "Director of Sales",
     company: "Big Blue Printing",
   },
   {
     quote:
-      "The difference is night and day. Real humans, real conversations, real appointments. Our conversion rate doubled in 90 days.",
+      "In financial services, trust is everything. We can't afford a bot making promises we can't keep. WebDealer's agents understand compliance and still convert at a rate that makes our team smile.",
     author: "David Park",
     role: "VP of Business Development",
     company: "Meridian Financial Group",
   },
 ];
 
-export const FOUNDER_LETTER = {
-  heading: "The Anti-Bot Manifesto",
+export const LEGACY = {
+  headline: "15 Years of Human-Led Lead Generation",
+  subheadline:
+    "WebDealer Solutions was founded in 2015 with a simple belief: the best technology in the world can't replace a genuine human conversation when the stakes are high.",
   paragraphs: [
-    "I built WebDealer because I watched an entire industry race to replace human connection with chatbots — and I watched the leads bleed out.",
-    "The AI chatbot gold rush promised efficiency. What it delivered was a race to the bottom: scripted responses, hallucinated information, and a customer experience that feels like talking to a vending machine.",
-    "High-ticket buyers don't want efficiency. They want certainty. They want someone who understands that a $80,000 vehicle purchase isn't the same as ordering a pizza. They want a human who can read between the lines, handle complexity, and build the kind of trust that closes deals.",
-    "That's what we do. We're not anti-technology — we use it to route, track, and optimise. But we're fiercely anti-replacement. The moment you swap a human conversation for a chatbot script, you've told your prospect they're not worth the real thing.",
-    "Welcome to the Human Premium.",
+    "We've watched the industry chase every new chatbot trend — and we've watched those same businesses quietly come back to us when their conversion rates dropped, their CRM filled with junk data, and their customers started complaining.",
+    "For over a decade, we've been the quiet partner behind some of the most trusted brands in automotive, B2B services, and professional services. We don't advertise loudly. We don't promise AI magic. We deliver trained human professionals who treat your customers the way they deserve to be treated.",
+    "Every one of our 48 agents goes through a rigorous certification process on your specific business before they ever interact with your customers. They know your inventory, your pricing boundaries, your brand voice, and your compliance requirements.",
+    "The result? 286,000+ qualified leads generated for our clients since 2015. Not form fills. Not chat transcripts. Real, qualified, appointment-ready leads from real human conversations.",
   ],
-  author: "Surkhail",
-  title: "Founder, WebDealer Solution",
+  founderName: "Surkhail",
+  founderTitle: "Founder, WebDealer Solutions",
 } as const;

@@ -1,25 +1,19 @@
-import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/hero";
-import { TrustGap } from "@/components/sections/trust-gap";
-import { ComparisonTable } from "@/components/sections/comparison-table";
-import { SocialProof } from "@/components/sections/social-proof";
-
-const ROICalculator = dynamic(
-  () =>
-    import("@/components/sections/roi-calculator").then((m) => ({
-      default: m.ROICalculator,
-    })),
-  { ssr: false },
-);
+import { ImpactBanner } from "@/components/sections/impact-banner";
+import { TrustTax } from "@/components/sections/trust-tax";
+import { Pillars } from "@/components/sections/pillars";
+import { OnboardingPreview } from "@/components/sections/onboarding-preview";
+import { Testimonials } from "@/components/sections/testimonials";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <TrustGap />
-      <ComparisonTable />
-      <ROICalculator />
-      <SocialProof />
+      <ImpactBanner />
+      <TrustTax />
+      <Pillars />
+      <OnboardingPreview />
+      <Testimonials />
     </main>
   );
 }

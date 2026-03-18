@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LivePulse } from "@/components/shared/live-pulse";
 import { NAV_ITEMS } from "@/data/navigation";
 import { SITE } from "@/lib/constants";
 
@@ -22,13 +21,13 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
+          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-heading text-lg tracking-tight">
+        <Link href="/" className="font-heading text-lg tracking-tight font-bold text-foreground">
           {SITE.name}
         </Link>
 
@@ -45,11 +44,13 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Desktop Right */}
-        <div className="hidden md:flex items-center gap-4">
-          <LivePulse />
-          <Button asChild className="btn-shimmer">
-            <Link href={SITE.bookingUrl}>Book Your Audit</Link>
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center">
+          <Button
+            asChild
+            className="rounded-xl text-sm px-6 h-10 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm hover:shadow-md transition-all hover:scale-[1.02]"
+          >
+            <Link href={SITE.bookingUrl}>Book a Consultation</Link>
           </Button>
         </div>
 
@@ -77,11 +78,13 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="flex items-center gap-4 pt-2 border-t border-border">
-              <LivePulse />
-            </div>
-            <Button asChild className="btn-shimmer w-full">
-              <Link href={SITE.bookingUrl}>Book Your Audit</Link>
+            <Button
+              asChild
+              className="rounded-xl w-full bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <Link href={SITE.bookingUrl} onClick={() => setMenuOpen(false)}>
+                Book a Consultation
+              </Link>
             </Button>
           </nav>
         </div>

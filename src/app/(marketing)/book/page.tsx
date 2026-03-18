@@ -10,9 +10,9 @@ const BookClient = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Book Your Audit | Web Dealer Solution",
+  title: "Book a Consultation | WebDealer Solutions",
   description:
-    "Book a 15-minute Conversion Audit. Discover exactly how much revenue your current web-forms are leaking.",
+    "Book a free 15-minute conversion audit. Discover exactly how much revenue your website is leaking.",
 };
 
 export default function BookPage() {

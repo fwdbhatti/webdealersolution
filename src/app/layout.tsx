@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { inter, playfairDisplay, jetbrainsMono } from "@/lib/fonts";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Web Dealer Solution | Human-Powered Lead Conversion",
+  title: "WebDealer Solutions | Human-First Lead Conversion",
   description:
-    "The 24/7 human-powered sales floor for high-ticket brands. Stop losing leads to bots and away messages.",
+    "We don't sell software. We provide the empathy, care, and 24/7 human connection that AI bots can't deliver. Protecting high-ticket brands since 2015.",
 };
 
 export default function RootLayout({
@@ -19,18 +18,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
-      suppressHydrationWarning
+      className={`${inter.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>
