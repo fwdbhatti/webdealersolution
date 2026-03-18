@@ -4,30 +4,30 @@
 
 @layer base {
   :root {
-    /* White & Gold — Elite Concierge Palette */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* Light Premium — European Automotive Showroom */
+    --background: 37 33% 97%;
+    --foreground: 235 33% 14%;
     --primary: 43 76% 52%;
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 210 55% 11%;
-    --secondary: 40 33% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 40 20% 96%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 40 33% 93%;
-    --accent-foreground: 222 47% 11%;
+    --primary-foreground: 235 33% 14%;
+    --primary-dark: 228 28% 16%;
+    --secondary: 37 23% 93%;
+    --secondary-foreground: 235 33% 14%;
+    --muted: 37 20% 95%;
+    --muted-foreground: 220 12% 40%;
+    --accent: 37 23% 93%;
+    --accent-foreground: 235 33% 14%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 34 17% 90%;
+    --input: 34 17% 90%;
     --ring: 43 76% 52%;
     --radius: 0.75rem;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 235 33% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 235 33% 14%;
     --gold: 43 76% 52%;
-    --gold-foreground: 0 0% 100%;
+    --gold-foreground: 235 33% 14%;
   }
 
   * {
@@ -43,7 +43,8 @@
   h1 {
     @apply font-heading;
     font-weight: 800;
-    color: hsl(222 47% 11%);
+    letter-spacing: -0.02em;
+    color: hsl(235 33% 14%);
   }
 
   h2,
@@ -52,7 +53,7 @@
   h5,
   h6 {
     @apply font-heading;
-    color: hsl(222 47% 11%);
+    color: hsl(235 33% 14%);
   }
 }
 
@@ -63,7 +64,7 @@
   }
 }
 
-/* ── Subtle entrance animation ── */
+/* ── Animations ── */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -72,6 +73,70 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes shimmer-border {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-gold {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(43 76% 52% / 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 8px hsl(43 76% 52% / 0);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes word-swap-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes word-swap-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px);
   }
 }
 

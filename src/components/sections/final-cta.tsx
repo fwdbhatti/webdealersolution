@@ -12,7 +12,15 @@ export function FinalCta() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <SectionWrapper className="bg-primary-dark">
+    <SectionWrapper
+      className="bg-primary-dark"
+      style={{
+        backgroundImage:
+          "linear-gradient(135deg, hsl(228 28% 16%) 0%, hsl(228 28% 12%) 50%, hsl(43 76% 20%) 100%)",
+        backgroundSize: "200% 200%",
+        animation: "gradient-shift 8s ease infinite",
+      }}
+    >
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 16 }}

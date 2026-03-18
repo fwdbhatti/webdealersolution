@@ -1,7 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import {
   Search,
   BookOpen,
@@ -21,8 +26,16 @@ const ICONS: Record<string, React.ElementType> = {
 };
 
 export function OnboardingPreview() {
+  const sectionRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
 
   return (
     <SectionWrapper id="process">
@@ -33,11 +46,16 @@ export function OnboardingPreview() {
         </h2>
       </div>
 
-      <div ref={ref} className="max-w-3xl mx-auto relative">
-        {/* Gold vertical timeline line */}
-        <div className="absolute left-7 top-0 bottom-0 w-px bg-primary/20 hidden md:block" />
+      <div ref={sectionRef} className="max-w-3xl mx-auto relative">
+        {/* Animated gold vertical timeline line */}
+        <div className="absolute left-7 top-0 bottom-0 w-px bg-border hidden md:block overflow-hidden">
+          <motion.div
+            className="w-full bg-primary origin-top"
+            style={{ height: lineHeight }}
+          />
+        </div>
 
-        <div className="space-y-8">
+        <div ref={ref} className="space-y-8">
           {ONBOARDING_STEPS.map((step, i) => {
             const Icon = ICONS[step.icon];
             return (
@@ -51,9 +69,29 @@ export function OnboardingPreview() {
                 className="flex gap-6 relative"
               >
                 <div className="shrink-0 relative z-10">
-                  <span className="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white font-heading text-xl font-bold shadow-md">
+                  <motion.span
+                    className="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white font-heading text-xl font-bold shadow-md"
+                    initial={false}
+                    animate={
+                      isInView
+                        ? {
+                            scale: [1, 1.08, 1],
+                            boxShadow: [
+                              "0 0 0 0 hsl(43 76% 52% / 0.4)",
+                              "0 0 0 8px hsl(43 76% 52% / 0)",
+                              "0 0 0 0 hsl(43 76% 52% / 0)",
+                            ],
+                          }
+                        : {}
+                    }
+                    transition={{
+                      duration: 0.8,
+                      delay: i * 0.15 + 0.3,
+                      ease: "easeOut",
+                    }}
+                  >
                     {step.number}
-                  </span>
+                  </motion.span>
                 </div>
                 <div className="pt-2">
                   <div className="flex items-center gap-2 mb-2">

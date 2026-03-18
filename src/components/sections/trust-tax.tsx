@@ -33,7 +33,7 @@ export function TrustTax() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -16 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="h-full border-destructive/20 bg-destructive/5 rounded-xl shadow-card">
+            <Card className="h-full bg-muted/50 border-border rounded-xl shadow-card">
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-lg font-semibold mb-4 text-destructive/80">
                   {TRUST_TAX.comparison.aiBot.title}
@@ -56,7 +56,7 @@ export function TrustTax() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 16 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Card className="h-full border-primary/30 bg-primary/5 rounded-xl shadow-card">
+            <Card className="h-full bg-secondary border-primary/20 rounded-xl shadow-card">
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-lg font-semibold mb-4 text-primary">
                   {TRUST_TAX.comparison.webdealer.title}
