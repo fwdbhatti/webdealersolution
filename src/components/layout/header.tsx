@@ -21,13 +21,14 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
+          ? "bg-white/95 backdrop-blur-lg border-b border-border shadow-md"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-heading text-lg tracking-tight font-bold text-foreground">
+        <Link href="/" className="flex items-center gap-2 font-heading text-lg tracking-tight font-bold text-foreground">
+          <span className="text-primary text-sm">◆</span>
           {SITE.name}
         </Link>
 
@@ -50,7 +51,7 @@ export function Header() {
             asChild
             className="rounded-xl text-sm px-6 h-10 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm hover:shadow-md transition-all hover:scale-[1.02]"
           >
-            <Link href={SITE.bookingUrl}>Book a Consultation</Link>
+            <Link href={SITE.bookingUrl}>Book a Free Audit</Link>
           </Button>
         </div>
 
@@ -66,7 +67,7 @@ export function Header() {
 
       {/* Mobile Nav */}
       {menuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
+        <div className="md:hidden bg-white/95 backdrop-blur-lg border-b border-border">
           <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
             {NAV_ITEMS.map((item) => (
               <Link
@@ -83,7 +84,7 @@ export function Header() {
               className="rounded-xl w-full bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <Link href={SITE.bookingUrl} onClick={() => setMenuOpen(false)}>
-                Book a Consultation
+                Book a Free Audit
               </Link>
             </Button>
           </nav>

@@ -49,6 +49,11 @@ const config: Config = {
           DEFAULT: "hsl(var(--gold))",
           foreground: "hsl(var(--gold-foreground))",
         },
+        "primary-dark": "hsl(var(--primary-dark))",
+      },
+      boxShadow: {
+        card: "0 4px 24px rgba(0,0,0,0.08)",
+        "card-hover": "0 8px 32px rgba(0,0,0,0.14)",
       },
       fontFamily: {
         heading: ["var(--font-playfair)", "Georgia", "serif"],

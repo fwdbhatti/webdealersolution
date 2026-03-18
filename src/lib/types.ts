@@ -14,35 +14,11 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
   return "items" in entry;
 }
 
-export interface ComparisonRow {
-  feature: string;
-  humanAgent: string | boolean;
-  aiChatbot: string | boolean;
-}
-
-export interface TrustGapCard {
+export interface PainPoint {
   icon: string;
-  title: string;
-  stat: string;
-  description: string;
-}
-
-export interface ProcessStep {
-  number: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  details: string[];
-}
-
-export interface IndustryTab {
-  id: string;
-  label: string;
   headline: string;
   description: string;
-  painPoints: string[];
-  solutions: string[];
-  clientName?: string;
+  resolution: string;
 }
 
 export interface Testimonial {
@@ -50,4 +26,5 @@ export interface Testimonial {
   author: string;
   role: string;
   company: string;
+  initials: string;
 }

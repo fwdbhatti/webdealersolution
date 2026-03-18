@@ -9,6 +9,7 @@
     --foreground: 222 47% 11%;
     --primary: 43 76% 52%;
     --primary-foreground: 0 0% 100%;
+    --primary-dark: 210 55% 11%;
     --secondary: 40 33% 96%;
     --secondary-foreground: 222 47% 11%;
     --muted: 40 20% 96%;
@@ -35,9 +36,16 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.75;
   }
 
-  h1,
+  h1 {
+    @apply font-heading;
+    font-weight: 800;
+    color: hsl(222 47% 11%);
+  }
+
   h2,
   h3,
   h4,
@@ -45,6 +53,13 @@
   h6 {
     @apply font-heading;
     color: hsl(222 47% 11%);
+  }
+}
+
+/* ── Utility classes ── */
+@layer components {
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.15em] text-primary font-semibold;
   }
 }
 

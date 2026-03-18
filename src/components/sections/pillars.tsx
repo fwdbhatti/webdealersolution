@@ -19,9 +19,10 @@ export function Pillars() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <SectionWrapper className="bg-secondary/50">
+    <SectionWrapper className="bg-primary-dark">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <p className="eyebrow mb-4">HOW WE&apos;RE DIFFERENT</p>
+        <h2 className="text-3xl md:text-4xl font-bold !text-white">
           The 4 Pillars of Human Conversion
         </h2>
       </div>
@@ -35,21 +36,25 @@ export function Pillars() {
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="hover:-translate-y-1 transition-all"
             >
-              <Card className="h-full bg-card border-border shadow-sm hover:shadow-md transition-shadow rounded-xl">
+              <Card className="h-full bg-card border-l-4 border-l-primary border-border shadow-card hover:shadow-card-hover transition-shadow rounded-xl">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-4">
                     {Icon && (
-                      <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10">
-                        <Icon className="w-5 h-5 text-primary" />
+                      <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10">
+                        <Icon className="w-8 h-8 text-primary" />
                       </div>
                     )}
                     <h3 className="text-lg font-semibold font-heading">
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed mb-4">
                     {pillar.body}
+                  </p>
+                  <p className="text-sm font-semibold text-primary">
+                    {pillar.result}
                   </p>
                 </CardContent>
               </Card>

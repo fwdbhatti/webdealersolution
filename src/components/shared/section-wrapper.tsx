@@ -12,7 +12,7 @@ export function SectionWrapper({
   style,
 }: SectionWrapperProps) {
   return (
-    <section className={`py-16 md:py-20 ${className ?? ""}`} id={id} style={style}>
+    <section className={`py-12 md:py-16 ${className ?? ""}`} id={id} style={style}>
       <div className="max-w-6xl mx-auto px-6 md:px-8">{children}</div>
     </section>
   );
