@@ -1,4 +1,4 @@
-import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -6,11 +6,11 @@ export const inter = Inter({
   variable: "--font-inter",
 });
 
-export const interTight = Inter_Tight({
+export const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter-tight",
-  weight: ["700", "800", "900"],
+  variable: "--font-playfair",
+  weight: ["400", "700", "800", "900"],
 });
 
 export const jetbrainsMono = JetBrains_Mono({
